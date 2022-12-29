@@ -36,12 +36,12 @@ def get_time():
 
 # Return full file name to store
 def file_name_store():
-    return game_store + "\\" + save + "_" + get_time()
+    return game_store + "\\"  + save + "\\" + save + "_" + get_time()
 
 
 # main compression function
 def compress():
-    cmd = [zip_path, 'a', '-t7z',  file_name_store() + ".7z", full_save, '-mx9']
+    cmd = [zip_path, 'a', '-t7z',  '-ssw', file_name_store() + ".7z", full_save, '-mx9']
     sp = Popen(cmd, stderr=STDOUT, stdout=PIPE)
     # stdout = sp.communicate()[0]
     # print('STDOUT:{}'.format(stdout.decode("UTF-8")))
