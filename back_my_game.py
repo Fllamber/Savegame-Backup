@@ -41,7 +41,7 @@ def file_name_store():
 
 # main compression function
 def compress():
-    cmd = [zip_path, 'a', '-t7z',  '-ssw', file_name_store() + ".7z", full_save, '-mx9']
+    cmd = [zip_path, 'a', '-t7z',  '-ssw', '-mx9', file_name_store() + ".7z", full_save]
     sp = Popen(cmd, stderr=STDOUT, stdout=PIPE)
     # stdout = sp.communicate()[0]
     # print('STDOUT:{}'.format(stdout.decode("UTF-8")))
